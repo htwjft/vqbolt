@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1c1c1c;
+    padding-top: 80px;
+}
+
+.visible-quality-gradient {
+    background: linear-gradient(90deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+}
+
+.header-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.header-link:hover {
+    transform: translateY(-2px);
+}
+
+.header-link.active {
+    background-color: rgb(255, 255, 255);
+    color: #dc2626;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-radius: 50%;
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-container:hover::after {
+    opacity: 0.15;
+}
+
+.language-switch {
+    transition: all 0.3s ease;
+}
+
+.language-switch:hover {
+    transform: scale(1.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button styles */
+.btn-yellow {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+}
+
+.btn-yellow:hover {
+    background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-red {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+}
+
+.btn-red:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Animation for subtle movement */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
